@@ -1,0 +1,11 @@
+# Block access to www.gutenberg.org from Germany for this eBook, per
+# the lawsuit settlement made between PGLAF and Fischer-Verlag in
+# October 2021.
+
+# This block will remain in place until January 1 of the year after the
+# 70th year after the author's death.
+
+# For more information about the lawsuit, see https://cand.pglaf.org/germany
+
+RewriteCond %{ENV:MM_COUNTRY_CODE} ^DE$
+RewriteRule ^(.*)$  %{HTTP:X-Forwarded-Proto}://block.pglaf.org/germany.shtml [R=307]
